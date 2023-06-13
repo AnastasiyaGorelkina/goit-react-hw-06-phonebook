@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 export const ContactForm = () => {
-  const contacts = useSelector(({ contacts }) => contacts.contacts);
+  const contacts = useSelector(({ contacts }) => contacts);
+  console.log(contacts);
   const dispatch = useDispatch();
 
   const nameInputId = nanoid();
@@ -21,7 +22,7 @@ export const ContactForm = () => {
       number: e.target.number.value,
     };
     if (contacts.find(({ name }) => name === contact.name)) {
-      alert('sorry');
+      alert('sorry, something went wrong');
       return;
     }
     dispatch(addContact(contact));
