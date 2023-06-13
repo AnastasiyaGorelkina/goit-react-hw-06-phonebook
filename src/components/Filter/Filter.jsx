@@ -1,11 +1,13 @@
+import React from 'react';
 import { Input, Label } from "components/ContactsForm/ContactsForm.styled";
 import { useDispatch } from "react-redux";
-import { filter } from "redux/filterSlice";
+import { filterContacts } from "redux/filterSlice"
 
 export const Filter = () => {
-    const dispatch = useDispatch();
-    const search = (e) => {
-        dispatch(filter(e.target.value));
+  const dispatch = useDispatch();
+  
+    const search = e => {
+        dispatch(filterContacts(e.target.value));
     };
 
   return (
