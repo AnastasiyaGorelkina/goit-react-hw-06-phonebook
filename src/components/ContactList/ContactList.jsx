@@ -1,18 +1,13 @@
-import React from "react";
 import { Item, List, Button } from "./ContactList.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContact } from "redux/contactsSlice";
 
-
-
 export const ContactList = () => {
-  const contacts = useSelector(state => state.contacts);
-  console.log(contacts);
+  const contacts = useSelector(state => state.contacts.contacts);
   const filter = useSelector(state => state.filter);
-  console.log(filter);
   const dispatch = useDispatch();
 
-  const delContact = id => {
+  const deletContact = id => {
     dispatch(deleteContact(id));
   };
 
@@ -30,7 +25,7 @@ export const ContactList = () => {
         return (
           <Item key={id}>
             {name}: {number}
-            <Button type="button" onClick={() => delContact(id)}>
+            <Button type="button" onClick={() => deletContact(id)}>
               Delete
             </Button>
           </Item>
@@ -39,5 +34,3 @@ export const ContactList = () => {
     </List>
   );
 };
-
-

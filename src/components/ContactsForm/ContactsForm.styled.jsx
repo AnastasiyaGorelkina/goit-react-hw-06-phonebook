@@ -23,6 +23,14 @@ export const Input = styled.input`
   width: 350px;
   height: 35px;
   border-radius: 10px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+  &:hover, :focus {
+    transform: scale(1.05);
+    background: #cbeaed;
+    box-shadow: 5px 3px 10px 1px;
+    color: black;
+  }
 `;
 
 export const Add = styled.button`
@@ -32,13 +40,14 @@ export const Add = styled.button`
   border: 2px solid rgb(8, 41, 17);
   border-radius: 4px;
   cursor: pointer;
-  color: rgb(222, 206, 169);
-  background-color: rgb(8, 41, 17);
+  color: black;
+  background-color:#81dee8e1;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   &:hover {
     transform: scale(1.05);
-    background: rgb(104 91 101);
-    box-shadow: 5px 3px 10px 1px;
+    background: green;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    color: #fff;
   }
 `;

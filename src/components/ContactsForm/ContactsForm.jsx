@@ -1,4 +1,3 @@
-import React from 'react';
 import { Label, Form, Title, Input, Add } from './ContactsForm.styled';
 import { nanoid } from 'nanoid';
 import { addContact } from 'redux/contactsSlice';
@@ -6,8 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 export const ContactForm = () => {
-  const contacts = useSelector(({ contacts }) => contacts);
-  console.log(contacts);
+  const contacts = useSelector(({ contacts }) => contacts.contacts);
   const dispatch = useDispatch();
 
   const nameInputId = nanoid();
